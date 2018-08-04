@@ -1,0 +1,62 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title for the application. [CHAR LIMIT=20] -->
+    <string name="app_name">Book Inventory</string>
+
+    <!-- The book count in the TextView in the CatalogActivity. It will be shown in the format
+     "The books table contains 10 books." where 10 is the number of items. [CHAR LIMIT=NONE] -->
+    <string name="book_count">The books table contains <xliff:g example="10"
+        id="cursorCount">%d</xliff:g> books.\n\n</string>
+
+    <!-- Title for the editor activity to add a new book [CHAR LIMIT=20] -->
+    <string name="editor_activity_title">Add a Book</string>
+
+    <!-- Label for editor menu option to save the book in the editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Category label for the book information in the editor [CHAR LIMIT=30] -->
+    <string name="category_book">Book</string>
+
+    <!-- Category label for the supplier information in the editor [CHAR LIMIT=30] -->
+    <string name="category_supplier">Supplier</string>
+
+    <!-- Currency symbol for the price EditText in the editor [CHAR LIMIT=5] -->
+    <string name="currency_symbol">$</string>
+
+    <!-- Hint for the title EditText in the editor [CHAR LIMIT=20] -->
+    <string name="et_title_hint">Title</string>
+
+    <!-- Hint for the price EditText in the editor [CHAR LIMIT=20] -->
+    <string name="et_price_hint">Price</string>
+
+    <!-- Hint for the quantity EditText in the editor [CHAR LIMIT=20] -->
+    <string name="et_quantity_hint">Quantity</string>
+
+    <!-- Hint for the phone number EditText in the editor [CHAR LIMIT=20] -->
+    <string name="et_phone_number_hint">Phone Number</string>
+
+    <!-- Label for dropdown Spinner option in the editor if the supplier
+     is option one [CHAR LIMIT=20] -->
+    <string name="supplier_one">Book Supply</string>
+
+    <!-- Label for dropdown Spinner option in the editor if the supplier
+     is option two [CHAR LIMIT=20] -->
+    <string name="supplier_two">Place of Books</string>
+
+    <!-- Label for dropdown Spinner option in the editor if the supplier
+     is option three [CHAR LIMIT=20] -->
+    <string name="supplier_three">Unlimited Books</string>
+
+    <!-- Label for dropdown Spinner option in the editor if the supplier
+     is option four [CHAR LIMIT=20] -->
+    <string name="supplier_four">Warehouse of Books</string>
+
+    <!-- Toast message if some information isn't entered in the editor [CHAR LIMIT=NONE] -->
+    <string name="enter_fields">Please make sure the title, price, and quantity
+        are entered.</string>
+
+    <!-- Toast message if there is an error saving the book in the editor [CHAR LIMIT=NONE] -->
+    <string name="save_error">Error with saving book.</string>
+
+    <!-- Toast message if the book is successfully saved in the editor [CHAR LIMIT=NONE] -->
+    <string name="save_successful">Book saved with row id:</string>
+</resources>

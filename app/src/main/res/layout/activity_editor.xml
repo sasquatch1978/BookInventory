@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".EditorActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/marginMedium"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_book"
+                style="@style/CategoryStyle"
+                android:text="@string/category_book"
+                app:layout_constraintBottom_toBottomOf="@+id/et_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_title" />
+
+            <TextView
+                android:id="@+id/tv_supplier"
+                style="@style/CategoryStyle"
+                android:text="@string/category_supplier"
+                app:layout_constraintBottom_toBottomOf="@+id/spn_supplier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spn_supplier" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_symbol"
+                app:layout_constraintBottom_toBottomOf="@+id/et_price"
+                app:layout_constraintEnd_toStartOf="@+id/et_price"
+                app:layout_constraintTop_toTopOf="@+id/et_price" />
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:hint="@string/et_title_hint"
+                android:inputType="textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/et_price"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_price"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:hint="@string/et_price_hint"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/et_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/et_title" />
+
+            <EditText
+                android:id="@+id/et_quantity"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginSmall"
+                android:hint="@string/et_quantity_hint"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/spn_supplier"
+                app:layout_constraintTop_toBottomOf="@+id/et_price" />
+
+            <Spinner
+                android:id="@+id/spn_supplier"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginLarge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_supplier"
+                app:layout_constraintTop_toBottomOf="@+id/et_quantity" />
+
+            <EditText
+                android:id="@+id/et_phone_number"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:hint="@string/et_phone_number_hint"
+                android:inputType="phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/et_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/spn_supplier" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>
