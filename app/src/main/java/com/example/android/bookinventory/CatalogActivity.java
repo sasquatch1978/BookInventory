@@ -68,16 +68,17 @@ public class CatalogActivity extends AppCompatActivity {
                 BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER
         };
 
-        // Perform a query on the books table, using 'try' with resources
-        // which automatically closes the cursor.
-        try (Cursor cursor = db.query(
+        // Perform a query on the books table.
+        Cursor cursor = db.query(
                 BookEntry.TABLE_NAME,
                 projection,
                 null,
                 null,
                 null,
                 null,
-                null)) {
+                null);
+
+        try {
             // Create a header in the TextView.
             int cursorCount = cursor.getCount();
             tvBook.setText(getString(R.string.book_count, cursorCount));
@@ -99,11 +100,11 @@ public class CatalogActivity extends AppCompatActivity {
 
             // Iterate through all the returned rows in the cursor
             while (cursor.moveToNext()) {
-                // Use that index to extract the String or Int value of the word
+                // Use that index to extract the String, Int, or Double value of the word
                 // at the current row the cursor is on.
                 int currentID = cursor.getInt(idColumnIndex);
                 String currentProductName = cursor.getString(productNameColumnIndex);
-                int currentPrice = cursor.getInt(priceColumnIndex);
+                double currentPrice = cursor.getDouble(priceColumnIndex);
                 int currentQuantity = cursor.getInt(quantityColumnIndex);
                 int currentSupplier = cursor.getInt(supplierColumnIndex);
                 String currentSupplierPhoneNumber = cursor.getString(supplierPhoneNumberColumnIndex);
@@ -117,6 +118,9 @@ public class CatalogActivity extends AppCompatActivity {
                         + currentSupplier + " - "
                         + currentSupplierPhoneNumber);
             }
+        } finally {
+            // Close the cursor to release all its resources and make it invalid.
+            cursor.close();
         }
     }
 }

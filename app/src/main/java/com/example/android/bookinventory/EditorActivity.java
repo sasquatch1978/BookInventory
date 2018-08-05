@@ -102,16 +102,14 @@ public class EditorActivity extends AppCompatActivity {
         String quantity = etQuantity.getText().toString().trim();
         String supplierPhoneNumber = etPhoneNumber.getText().toString().trim();
 
-        int bookPrice = 0;
+        double bookPrice = 0;
         int bookQuantity = 0;
-        // Make sure a price and quantity are entered before converting to integers.
+        // Make sure a price and quantity are entered before converting.
         if (!price.equals("") && !quantity.equals("")) {
             // Convert the price to a double.
-            double doublePrice = Double.parseDouble(price);
+            bookPrice = Double.parseDouble(price);
 
-            // Convert the price and quantity to integers,
-            // price will need converted back to double when displayed to user.
-            bookPrice = (int) (doublePrice * 100);
+            // Convert the quantity to an integer,
             bookQuantity = Integer.parseInt(quantity);
         }
 
